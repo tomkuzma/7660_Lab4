@@ -30,7 +30,7 @@ module tonegen
         end
     end
 
-    // speaker logic
+    // speaker logic 
     always_comb begin    
         nextCount = count + freq; // increment count
         nextSpkr = spkr;    // hold speaker logic
@@ -44,67 +44,3 @@ module tonegen
     end
 
 endmodule
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // always_ff @(posedge clk or posedge reset) begin
-    //     if (reset) begin 
-    //         outFreq <= '0;
-    //         count <= '0; 
-    //     end
-    //     else if (write) begin
-    //         outFreq <= writedata;
-    //         togCount <= (fclk/(2*outFreq));
-    //     end
-
-    //     count <= nextCount;
-    // end
-
-    // // // toggle speaker
-    // // always_ff @(posedge clk) begin
-
-    // //     if (outFreq != '0) begin
-    // //         if (count == togCount) begin
-    // //             spkr = ~spkr;
-    // //             togCount <= nextToggle;
-    // //         end
-    // //     end
-
-    // // end
-
-    // always_comb begin
-    //     if (outFreq != '0) begin 
-    //         nextCount = count + 1;
-    //     end
-    //     else nextCount = '0;
-    //     // nextToggle = count + (fclk/(2*outFreq));
-
-    //     if (nextCount == fclk || write) nextCount = '0;
-
-    //     togClk = |(count % togCount);
-    // end
-
-    
-    // always_ff @(negedge togClk, posedge reset ) begin
-    //     if (reset) spkr = 1'b0;
-    //     else spkr = ~spkr;
-    // end
-
